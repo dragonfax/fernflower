@@ -351,7 +351,7 @@ public class InvocationExprent extends Exprent {
 
         Exprent param = unboxIfNeeded(lstParameters.get(i));
         // 'byte' and 'short' literals need an explicit narrowing type cast when used as a parameter
-        ExprProcessor.getCastedExprent(param, descriptor.params[i], buff, indent, true, ambiguous, true, tracer);
+        ExprProcessor.getCastedExprent(param, descriptor.params[i], buff, indent, false, ambiguous, true, tracer);
 
         // the last "new Object[0]" in the vararg call is not printed
         if (buff.length() > 0) {
